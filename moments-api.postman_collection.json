@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "c51d0fff-e7fa-4202-8171-24f5ca686f7c",
+		"name": "moments-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18820111"
+	},
+	"item": [
+		{
+			"name": "moments",
+			"item": [
+				{
+					"name": "get all moments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/moments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a moment by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/moments/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert a moment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "teste",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "descrição",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/renat/OneDrive/Área de Trabalho/322233767_540990124801961_2025611129467639810_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/moments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a moment by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testeUpdate",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "descriptionUpdate",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/renat/OneDrive/Área de Trabalho/fd11b61e-2936-4f2b-8a9a-f384a1dbb382.jfif"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/moments/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a moment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/moments/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "insert a comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"anatete\",\r\n    \"text\": \"anatete amo amo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/moments/:momentId/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":momentId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "momentId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/moments/:momentId/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":momentId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "momentId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a comment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/moments/:momentId/comments/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"moments",
+								":momentId",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "momentId",
+									"value": "1"
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3333/api",
+			"type": "string"
+		}
+	]
+}
