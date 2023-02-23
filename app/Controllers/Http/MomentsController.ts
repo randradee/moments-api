@@ -35,7 +35,7 @@ export default class MomentsController {
   }
 
   public async index() {
-    const moments = await Moment.all()
+    const moments = await Moment.query().preload('comments')
 
     return {
       message: 'Consulta realizada com sucesso',
@@ -45,6 +45,8 @@ export default class MomentsController {
 
   public async show({ params }: HttpContextContract) {
     const moment = await Moment.findOrFail(params.id)
+
+    await moment.load('comments')
 
     return {
       message: 'Consulta realizada com sucesso',
